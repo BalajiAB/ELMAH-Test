@@ -1,0 +1,42 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4 pull-right">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="control-label">Search</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" ng-model="searchText" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Host</th>
+                    <th>ApplicationName</th>
+                    <th>Details</th>
+                    <th>Message</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="log in mylogs | filter:searchText">
+                    <td>{{log.Id}}</td>
+                    <td>{{log.host}}</td>
+                    <td>{{log.ApplicationName}}</td>
+                    <td>{{log.detail}}</td>
+                    <td>{{log.message}}</td>
+                    <td>{{log.time}}</td>
+                    <td>{{log.type}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
